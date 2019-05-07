@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="google" content="notranslate"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>标准肝体积计算公式</title>
+    <script>
+        function docal(){
+            var W= document.getElementById("weight").value;
+            var V= document.getElementById("abV").value;
+            if(W==''){document.getElementById("Output1").innerHTML=null;document.getElementById("Output2").innerHTML=null;return;}
+            var stV=11.508*W+334.024;
+            var perstV=V/stV;
+            var out1="标准肝体积:"+stV.toFixed(2)+"cm3";
+            var out2="占标准肝体积:"+(perstV*100).toFixed(2)+"%";
+            document.getElementById("Output1").innerHTML=out1;
+            if(V==''){document.getElementById("Output2").innerHTML=null; return;}
+            document.getElementById("Output2").innerHTML=out2;
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td style="padding: 8px 0px;">标准肝体积计算公式</td>
+    </tr>
+    <tr>
+        <td>体重（kg）: <input type="text" id="weight", style="width: 60px"></td>
+    </tr>
+    <tr>
+        <td>实测肝体积: <input type="text" id="abV", style="width: 60px"></td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; text-align: center">
+            <input type="button" onclick="docal()" value="提交计算">
+        </td>
+    </tr>
+    <tr>
+        <td><out id="Output1"></out></td>
+    </tr>
+    <tr>
+        <td><out id="Output2"></out></td>
+    </tr>
+</table>
+</body>
+</html>
